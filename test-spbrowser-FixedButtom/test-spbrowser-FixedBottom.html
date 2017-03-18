@@ -1,0 +1,66 @@
+<!DOCTYPE HTML>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>Test that fixed bottom with smartphone browsers</title>
+        <meta name="viewport" content="width=device-width,initial-scale=1">
+        <style>
+        html, body {
+            margin: 0;
+            padding: 0;
+            background: #f4f4f4;
+        }
+        /* common(portrait) styles */
+        .video {
+            width: 100%;
+            height: auto;
+            position: relative;
+            line-height: 0;
+            background: #222;
+        }
+
+        .video > video {
+            width: 100%;
+            height: auto;
+        }
+
+        .caption {
+            box-sizing: border-box;
+            width: 100%;
+            padding: 20px;
+            background: rgba(0, 125, 255, .25);
+            position: absolute;
+            left: 0;
+            bottom: 0;
+            color: #fff;
+        }
+
+        .discription {
+            width: 100%;
+            height: 800px;
+            background: yellow;
+        }
+
+        /* randscape */
+        @media screen and (min-aspect-ratio: 1/1) {
+            .video {
+                position: static;
+            }
+            .discription {
+                display: none;
+            }
+        }
+        </style>
+    </head>
+    <body>
+        <div class="video">
+            <video src="./sample_movie.mp4"></video>
+            <div class="caption">
+                caption area
+            </div>
+        </div>
+        <div class="discription">
+            discription area
+        </div>
+    </body>
+</html>
