@@ -9,6 +9,7 @@
             margin: 0;
             padding: 0;
             background: #f4f4f4;
+            line-height: 0;
         }
         /* common(portrait) styles */
         .video {
@@ -46,6 +47,10 @@
             .video {
                 position: static;
             }
+            .caption {
+                position: fixed;
+                bottom: 0;
+            }
             .discription {
                 display: none;
             }
@@ -54,7 +59,7 @@
     </head>
     <body>
         <div class="video">
-            <video src="./sample_movie.mp4"></video>
+            <video src="./sample_movie.mp4" autoplay></video>
             <div class="caption">
                 caption area
             </div>
