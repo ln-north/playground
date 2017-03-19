@@ -57,10 +57,14 @@
         @media screen and (min-aspect-ratio: 1/1) {
             .video {
                 position: static;
+                height: 100vh;
+            }
+            .video > video {
+                width: auto;
+                height: 100%;
             }
             .caption {
                 position: fixed;
-                bottom: 0;
             }
             .discription {
                 display: none;
