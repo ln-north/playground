@@ -11,12 +11,23 @@
             background: #f4f4f4;
             line-height: 0;
         }
+        .info {
+            padding: 20px;
+            position: fixed;
+            top: 0;
+            left: 0;
+            font-size: 10px;
+            color: #000;
+            background: rgba(255, 255, 255, .8);
+            z-index: 1;
+            overflow: hidden;
+        }
         /* common(portrait) styles */
         .video {
             width: 100%;
             height: auto;
             position: relative;
-            line-height: 0;
+            font-size: 0;
             background: #222;
         }
 
@@ -58,6 +69,16 @@
         </style>
     </head>
     <body>
+        <div class="info">
+            <p>screen.height: <span class="js-screen-height"></span></p>
+            <p>screen.availHeight: <span class="js-screen-availHeight"></span></p>
+            <p>window.innerHeight: <span class="js-window-innerHeight"></span></p>
+            <p>window.outerHeight: <span class="js-window-outerHeight"></span></p>
+            <p>document.body.clientHeight: <span class="js-document-body-clientHeight"></span></p>
+            <p>document.documentElement.clientHeight: <span class="js-document-documentElement-clientHeight"></span></p>
+            <p>window.scrollY: <span class="js-window-scrollY"></span></p>
+            <p>window.body.scrollTop: <span class="js-document-body-scrollTop"></span></p>
+        </div>
         <div class="video">
             <video src="./sample_movie.mp4" autoplay></video>
             <div class="caption">
@@ -67,5 +88,18 @@
         <div class="discription">
             discription area
         </div>
-    </body>
+        <script>
+            var Event = function() {
+                document.querySelector(".js-screen-height").innerText = screen.height;
+                document.querySelector(".js-screen-availHeight").innerText = screen.availHeight;
+                document.querySelector(".js-window-innerHeight").innerText = window.innerHeight;
+                document.querySelector(".js-window-outerHeight").innerText = window.outerHeight;
+                document.querySelector(".js-document-body-clientHeight").innerText = document.body.clientHeight;
+                document.querySelector(".js-document-documentElement-clientHeight").innerText = document.documentElement.clientHeight;
+                document.querySelector(".js-window-scrollY").innerText = window.scrollY;
+                document.querySelector(".js-document-body-scrollTop").innerText = document.body.scrollTop;
+                setTimeout(Event, 1000/60);
+            }
+            Event();
+        </script>
 </html>
