@@ -1,0 +1,152 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>フォントレンダリングのテスト</title>
+    <style>
+    html, body {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: Avenir, Lato, "Hiragino Kaku Gothic Pro", Meiryo, sans-serif;
+    }
+    body {
+        display: flex;
+        flex-flow: row nowrap;
+    }
+    section {
+        width: 100%;
+        max-width: 800px;
+        margin: 0 auto;
+        padding: 36px 8px;
+    }
+    h1 {
+        font-size: 24px;
+        height: 100px;
+    }
+    .subpixel {
+        -webkit-font-smoothing: subpixel-antialiased;
+        -moz-osx-font-smoothing: unset;
+    }
+    .fix-ratio {
+        -webkit-font-smoothing: subpixel-antialiased;
+        -moz-osx-font-smoothing: unset;
+    }
+    @media only screen and
+    (-webkit-min-device-pixel-ratio: 2),
+    (min-resolution: 2dppx) {
+        .fix-ratio {
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+        }
+    }
+
+    .regular {
+        font-weight: regular;
+    }
+    .bold {
+        font-weight: bold;
+    }
+
+    p {
+        padding: 10px 8px;
+    }
+    .red {
+        background: red;
+        color: white;
+    }
+    .blue {
+        background: blue;
+        color: white;
+    }
+    .black {
+        background: black;
+        color: white;
+    }
+    .white {
+        background: white;
+        color: black;
+    }
+    .right-gray {
+        background: #ccc;
+        color: black;
+    }
+    .dark-gray {
+        background: #666;
+        color: white;
+    }
+    .skyblue {
+        background: #0080ff;
+        color: white;
+    }
+    .lightorange {
+        background: #d9a300;
+        color: white;
+    }
+    .black.graytext {
+        color: #aaa;
+    }
+    .white.graytext {
+        color: #888;
+    }
+    </style>
+    </head>
+    <body>
+    <section class="subpixel">
+    <section class="regular">
+    <h1>Regular レンダリングテスト - サブピクセル</h1>
+    <p class="red">This keyword defers to the browser regarding whether to use kerning. When the font size is small, font kerning may look strange and browsers will disable it. This is the default value. このキーワードは、カーニングを使用するかをブラウザに任せます。フォントサイズが小さい場合はカーニングが不自然になることがあるため、ブラウザは無効化するでしょう。これは既定値です。</p>
+    <p class="blue">This keyword defers to the browser regarding whether to use kerning. When the font size is small, font kerning may look strange and browsers will disable it. This is the default value. このキーワードは、カーニングを使用するかをブラウザに任せます。フォントサイズが小さい場合はカーニングが不自然になることがあるため、ブラウザは無効化するでしょう。これは既定値です。</p>
+    <p class="black">This keyword defers to the browser regarding whether to use kerning. When the font size is small, font kerning may look strange and browsers will disable it. This is the default value. このキーワードは、カーニングを使用するかをブラウザに任せます。フォントサイズが小さい場合はカーニングが不自然になることがあるため、ブラウザは無効化するでしょう。これは既定値です。</p>
+    <p class="black graytext">This keyword defers to the browser regarding whether to use kerning. When the font size is small, font kerning may look strange and browsers will disable it. This is the default value. このキーワードは、カーニングを使用するかをブラウザに任せます。フォントサイズが小さい場合はカーニングが不自然になることがあるため、ブラウザは無効化するでしょう。これは既定値です。</p>
+    <p class="white">This keyword defers to the browser regarding whether to use kerning. When the font size is small, font kerning may look strange and browsers will disable it. This is the default value. このキーワードは、カーニングを使用するかをブラウザに任せます。フォントサイズが小さい場合はカーニングが不自然になることがあるため、ブラウザは無効化するでしょう。これは既定値です。</p>
+    <p class="white graytext">This keyword defers to the browser regarding whether to use kerning. When the font size is small, font kerning may look strange and browsers will disable it. This is the default value. このキーワードは、カーニングを使用するかをブラウザに任せます。フォントサイズが小さい場合はカーニングが不自然になることがあるため、ブラウザは無効化するでしょう。これは既定値です。</p>
+    <p class="right-gray">This keyword defers to the browser regarding whether to use kerning. When the font size is small, font kerning may look strange and browsers will disable it. This is the default value. このキーワードは、カーニングを使用するかをブラウザに任せます。フォントサイズが小さい場合はカーニングが不自然になることがあるため、ブラウザは無効化するでしょう。これは既定値です。</p>
+    <p class="dark-gray">This keyword defers to the browser regarding whether to use kerning. When the font size is small, font kerning may look strange and browsers will disable it. This is the default value. このキーワードは、カーニングを使用するかをブラウザに任せます。フォントサイズが小さい場合はカーニングが不自然になることがあるため、ブラウザは無効化するでしょう。これは既定値です。</p>
+    <p class="skyblue">This keyword defers to the browser regarding whether to use kerning. When the font size is small, font kerning may look strange and browsers will disable it. This is the default value. このキーワードは、カーニングを使用するかをブラウザに任せます。フォントサイズが小さい場合はカーニングが不自然になることがあるため、ブラウザは無効化するでしょう。これは既定値です。</p>
+    <p class="lightorange">This keyword defers to the browser regarding whether to use kerning. When the font size is small, font kerning may look strange and browsers will disable it. This is the default value. このキーワードは、カーニングを使用するかをブラウザに任せます。フォントサイズが小さい場合はカーニングが不自然になることがあるため、ブラウザは無効化するでしょう。これは既定値です。</p>
+    </section>
+    <section class="bold">
+    <h1>Bold レンダリングテスト - サブピクセル</h1>
+    <p class="red">This keyword defers to the browser regarding whether to use kerning. When the font size is small, font kerning may look strange and browsers will disable it. This is the default value. このキーワードは、カーニングを使用するかをブラウザに任せます。フォントサイズが小さい場合はカーニングが不自然になることがあるため、ブラウザは無効化するでしょう。これは既定値です。</p>
+    <p class="blue">This keyword defers to the browser regarding whether to use kerning. When the font size is small, font kerning may look strange and browsers will disable it. This is the default value. このキーワードは、カーニングを使用するかをブラウザに任せます。フォントサイズが小さい場合はカーニングが不自然になることがあるため、ブラウザは無効化するでしょう。これは既定値です。</p>
+    <p class="black">This keyword defers to the browser regarding whether to use kerning. When the font size is small, font kerning may look strange and browsers will disable it. This is the default value. このキーワードは、カーニングを使用するかをブラウザに任せます。フォントサイズが小さい場合はカーニングが不自然になることがあるため、ブラウザは無効化するでしょう。これは既定値です。</p>
+    <p class="black graytext">This keyword defers to the browser regarding whether to use kerning. When the font size is small, font kerning may look strange and browsers will disable it. This is the default value. このキーワードは、カーニングを使用するかをブラウザに任せます。フォントサイズが小さい場合はカーニングが不自然になることがあるため、ブラウザは無効化するでしょう。これは既定値です。</p>
+    <p class="white">This keyword defers to the browser regarding whether to use kerning. When the font size is small, font kerning may look strange and browsers will disable it. This is the default value. このキーワードは、カーニングを使用するかをブラウザに任せます。フォントサイズが小さい場合はカーニングが不自然になることがあるため、ブラウザは無効化するでしょう。これは既定値です。</p>
+    <p class="white graytext">This keyword defers to the browser regarding whether to use kerning. When the font size is small, font kerning may look strange and browsers will disable it. This is the default value. このキーワードは、カーニングを使用するかをブラウザに任せます。フォントサイズが小さい場合はカーニングが不自然になることがあるため、ブラウザは無効化するでしょう。これは既定値です。</p>
+    <p class="right-gray">This keyword defers to the browser regarding whether to use kerning. When the font size is small, font kerning may look strange and browsers will disable it. This is the default value. このキーワードは、カーニングを使用するかをブラウザに任せます。フォントサイズが小さい場合はカーニングが不自然になることがあるため、ブラウザは無効化するでしょう。これは既定値です。</p>
+    <p class="dark-gray">This keyword defers to the browser regarding whether to use kerning. When the font size is small, font kerning may look strange and browsers will disable it. This is the default value. このキーワードは、カーニングを使用するかをブラウザに任せます。フォントサイズが小さい場合はカーニングが不自然になることがあるため、ブラウザは無効化するでしょう。これは既定値です。</p>
+    <p class="skyblue">This keyword defers to the browser regarding whether to use kerning. When the font size is small, font kerning may look strange and browsers will disable it. This is the default value. このキーワードは、カーニングを使用するかをブラウザに任せます。フォントサイズが小さい場合はカーニングが不自然になることがあるため、ブラウザは無効化するでしょう。これは既定値です。</p>
+    <p class="lightorange">This keyword defers to the browser regarding whether to use kerning. When the font size is small, font kerning may look strange and browsers will disable it. This is the default value. このキーワードは、カーニングを使用するかをブラウザに任せます。フォントサイズが小さい場合はカーニングが不自然になることがあるため、ブラウザは無効化するでしょう。これは既定値です。</p>
+    </section>
+    </section>
+    <section class="fix-ratio">
+    <section class="regular">
+    <h1>Regular レンダリングテスト - いい感じ(普通のモニタはsubpixel、Retina解像度ではgrayscale)</h1>
+    <p class="red">This keyword defers to the browser regarding whether to use kerning. When the font size is small, font kerning may look strange and browsers will disable it. This is the default value. このキーワードは、カーニングを使用するかをブラウザに任せます。フォントサイズが小さい場合はカーニングが不自然になることがあるため、ブラウザは無効化するでしょう。これは既定値です。</p>
+    <p class="blue">This keyword defers to the browser regarding whether to use kerning. When the font size is small, font kerning may look strange and browsers will disable it. This is the default value. このキーワードは、カーニングを使用するかをブラウザに任せます。フォントサイズが小さい場合はカーニングが不自然になることがあるため、ブラウザは無効化するでしょう。これは既定値です。</p>
+    <p class="black">This keyword defers to the browser regarding whether to use kerning. When the font size is small, font kerning may look strange and browsers will disable it. This is the default value. このキーワードは、カーニングを使用するかをブラウザに任せます。フォントサイズが小さい場合はカーニングが不自然になることがあるため、ブラウザは無効化するでしょう。これは既定値です。</p>
+    <p class="black graytext">This keyword defers to the browser regarding whether to use kerning. When the font size is small, font kerning may look strange and browsers will disable it. This is the default value. このキーワードは、カーニングを使用するかをブラウザに任せます。フォントサイズが小さい場合はカーニングが不自然になることがあるため、ブラウザは無効化するでしょう。これは既定値です。</p>
+    <p class="white">This keyword defers to the browser regarding whether to use kerning. When the font size is small, font kerning may look strange and browsers will disable it. This is the default value. このキーワードは、カーニングを使用するかをブラウザに任せます。フォントサイズが小さい場合はカーニングが不自然になることがあるため、ブラウザは無効化するでしょう。これは既定値です。</p>
+    <p class="white graytext">This keyword defers to the browser regarding whether to use kerning. When the font size is small, font kerning may look strange and browsers will disable it. This is the default value. このキーワードは、カーニングを使用するかをブラウザに任せます。フォントサイズが小さい場合はカーニングが不自然になることがあるため、ブラウザは無効化するでしょう。これは既定値です。</p>
+    <p class="right-gray">This keyword defers to the browser regarding whether to use kerning. When the font size is small, font kerning may look strange and browsers will disable it. This is the default value. このキーワードは、カーニングを使用するかをブラウザに任せます。フォントサイズが小さい場合はカーニングが不自然になることがあるため、ブラウザは無効化するでしょう。これは既定値です。</p>
+    <p class="dark-gray">This keyword defers to the browser regarding whether to use kerning. When the font size is small, font kerning may look strange and browsers will disable it. This is the default value. このキーワードは、カーニングを使用するかをブラウザに任せます。フォントサイズが小さい場合はカーニングが不自然になることがあるため、ブラウザは無効化するでしょう。これは既定値です。</p>
+    <p class="skyblue">This keyword defers to the browser regarding whether to use kerning. When the font size is small, font kerning may look strange and browsers will disable it. This is the default value. このキーワードは、カーニングを使用するかをブラウザに任せます。フォントサイズが小さい場合はカーニングが不自然になることがあるため、ブラウザは無効化するでしょう。これは既定値です。</p>
+    <p class="lightorange">This keyword defers to the browser regarding whether to use kerning. When the font size is small, font kerning may look strange and browsers will disable it. This is the default value. このキーワードは、カーニングを使用するかをブラウザに任せます。フォントサイズが小さい場合はカーニングが不自然になることがあるため、ブラウザは無効化するでしょう。これは既定値です。</p>
+    </section>
+    <section class="bold">
+    <h1>Bold レンダリングテスト - いい感じ(普通のモニタはsubpixel、Retina解像度ではgrayscale)</h1>
+    <p class="red">This keyword defers to the browser regarding whether to use kerning. When the font size is small, font kerning may look strange and browsers will disable it. This is the default value. このキーワードは、カーニングを使用するかをブラウザに任せます。フォントサイズが小さい場合はカーニングが不自然になることがあるため、ブラウザは無効化するでしょう。これは既定値です。</p>
+    <p class="blue">This keyword defers to the browser regarding whether to use kerning. When the font size is small, font kerning may look strange and browsers will disable it. This is the default value. このキーワードは、カーニングを使用するかをブラウザに任せます。フォントサイズが小さい場合はカーニングが不自然になることがあるため、ブラウザは無効化するでしょう。これは既定値です。</p>
+    <p class="black">This keyword defers to the browser regarding whether to use kerning. When the font size is small, font kerning may look strange and browsers will disable it. This is the default value. このキーワードは、カーニングを使用するかをブラウザに任せます。フォントサイズが小さい場合はカーニングが不自然になることがあるため、ブラウザは無効化するでしょう。これは既定値です。</p>
+    <p class="black graytext">This keyword defers to the browser regarding whether to use kerning. When the font size is small, font kerning may look strange and browsers will disable it. This is the default value. このキーワードは、カーニングを使用するかをブラウザに任せます。フォントサイズが小さい場合はカーニングが不自然になることがあるため、ブラウザは無効化するでしょう。これは既定値です。</p>
+    <p class="white">This keyword defers to the browser regarding whether to use kerning. When the font size is small, font kerning may look strange and browsers will disable it. This is the default value. このキーワードは、カーニングを使用するかをブラウザに任せます。フォントサイズが小さい場合はカーニングが不自然になることがあるため、ブラウザは無効化するでしょう。これは既定値です。</p>
+    <p class="white graytext">This keyword defers to the browser regarding whether to use kerning. When the font size is small, font kerning may look strange and browsers will disable it. This is the default value. このキーワードは、カーニングを使用するかをブラウザに任せます。フォントサイズが小さい場合はカーニングが不自然になることがあるため、ブラウザは無効化するでしょう。これは既定値です。</p>
+    <p class="right-gray">This keyword defers to the browser regarding whether to use kerning. When the font size is small, font kerning may look strange and browsers will disable it. This is the default value. このキーワードは、カーニングを使用するかをブラウザに任せます。フォントサイズが小さい場合はカーニングが不自然になることがあるため、ブラウザは無効化するでしょう。これは既定値です。</p>
+    <p class="dark-gray">This keyword defers to the browser regarding whether to use kerning. When the font size is small, font kerning may look strange and browsers will disable it. This is the default value. このキーワードは、カーニングを使用するかをブラウザに任せます。フォントサイズが小さい場合はカーニングが不自然になることがあるため、ブラウザは無効化するでしょう。これは既定値です。</p>
+    <p class="skyblue">This keyword defers to the browser regarding whether to use kerning. When the font size is small, font kerning may look strange and browsers will disable it. This is the default value. このキーワードは、カーニングを使用するかをブラウザに任せます。フォントサイズが小さい場合はカーニングが不自然になることがあるため、ブラウザは無効化するでしょう。これは既定値です。</p>
+    <p class="lightorange">This keyword defers to the browser regarding whether to use kerning. When the font size is small, font kerning may look strange and browsers will disable it. This is the default value. このキーワードは、カーニングを使用するかをブラウザに任せます。フォントサイズが小さい場合はカーニングが不自然になることがあるため、ブラウザは無効化するでしょう。これは既定値です。</p>
+    </section>
+    </section>
+    </body>
+    </html>
