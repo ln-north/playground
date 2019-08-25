@@ -1,0 +1,72 @@
+:root {
+  --fuga-size: 50px;
+}
+
+.hoge {
+  position: relative;
+  clip-path: circle();
+  width: calc(var(--fuga-size) * 3);
+  height: calc(var(--fuga-size) * 3);
+  animation: circle-animation 1s ease infinite;
+}
+
+@keyframes circle-animation {
+  0% {
+    clip-path: circle(0px at 75px 75px);
+  }
+  100% {
+    clip-path: circle(75px at 75px 75px);
+  }
+}
+
+.fuga {
+  position: absolute;
+  width: var(--fuga-size);
+  height: var(--fuga-size);
+}
+
+.fuga:nth-of-type(1) {
+  top: calc(var(--fuga-size) * (1 - 1));
+  left: calc(var(--fuga-size) * (1 - 1));
+  background-color: red;
+}
+.fuga:nth-of-type(2) {
+  top: calc(var(--fuga-size) * (2 - 1));
+  left: calc(var(--fuga-size) * (1 - 1));
+  background-color: green;
+}
+.fuga:nth-of-type(3) {
+  top: calc(var(--fuga-size) * (3 - 1));
+  left: calc(var(--fuga-size) * (1 - 1));
+  background-color: blue;
+}
+.fuga:nth-of-type(4) {
+  top: calc(var(--fuga-size) * (1 - 1));
+  left: calc(var(--fuga-size) * (2 - 1));
+  background-color: yellow;
+}
+.fuga:nth-of-type(5) {
+  top: calc(var(--fuga-size) * (2 - 1));
+  left: calc(var(--fuga-size) * (2 - 1));
+  background-color: yellowgreen;
+}
+.fuga:nth-of-type(6) {
+  top: calc(var(--fuga-size) * (3 - 1));
+  left: calc(var(--fuga-size) * (2 - 1));
+  background-color: pink;
+}
+.fuga:nth-of-type(7) {
+  top: calc(var(--fuga-size) * (1 - 1));
+  left: calc(var(--fuga-size) * (3 - 1));
+  background-color: cyan;
+}
+.fuga:nth-of-type(8) {
+  top: calc(var(--fuga-size) * (2 - 1));
+  left: calc(var(--fuga-size) * (3 - 1));
+  background-color: magenta;
+}
+.fuga:nth-of-type(9) {
+  top: calc(var(--fuga-size) * (3 - 1));
+  left: calc(var(--fuga-size) * (3 - 1));
+  background-color: black;
+}
