@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>heightを使う方法</title>
+  <style>
+    #target {
+      overflow-y: hidden;
+      transition: height 0.5s ease;
+    }
+  </style>
+</head>
+
+<body>
+  <a href="./index.html">戻る</a>
+  <h1>heightを使う方法</h1>
+  <button id="button">開く</button>
+  <div id="target">
+    <div id="content">
+      あいうえおあいうえおあいうえおあいうえおあいうえおあいうえおあいうえおあいうえおあいうえおあいうえおあいうえおあいうえおあいうえおあいうえおあいうえおあいうえおあいうえおあいうえおあいうえおあいうえおあいうえおあいうえおあいうえおあいうえおあいうえおあいうえおあいうえおあいうえおあいうえおあいうえおあいうえおあいうえおあいうえおあいうえおあいうえおあいうえおあいうえおあいうえおあいうえおあいうえおあいうえおあいうえおあいうえおあいうえおあいうえおあいうえおあいうえおあいうえおあいうえおあいうえおあいうえおあいうえおあいうえおあいうえおあいうえおあいうえおあいうえおあいうえおあいうえおあいうえおあいうえおあいうえおあいうえおあいうえおあいうえおあいうえおあいうえおあいうえおあいうえおあいうえおあいうえおあいうえおあいうえおあいうえおあいうえおあいうえおあいうえおあいうえおあいうえおあいうえおあいうえおあいうえおあいうえおあいうえおあいうえおあいうえおあいうえおあいうえおあいうえおあいうえおあいうえおあいうえおあいうえおあいうえおあいうえおあいうえおあいうえおあいうえおあいうえおあいうえおあいうえおあいうえおあいうえおあいうえおあいうえおあいうえお
+    </div>
+  </div>
+  <script>
+    const button = document.getElementById('button');
+    const target = document.getElementById('target');
+    const content = document.getElementById('content');
+
+    function collapseSection(element) {
+      var sectionHeight = element.scrollHeight;
+
+      var elementTransition = element.style.transition;
+      element.style.transition = '';
+
+      requestAnimationFrame(function () {
+        element.style.height = sectionHeight + 'px';
+        element.style.transition = elementTransition;
+
+        requestAnimationFrame(function () {
+          element.style.height = 0 + 'px';
+        });
+      });
+
+      element.setAttribute('data-collapsed', 'true');
+    }
+
+    function expandSection(element) {
+      var sectionHeight = element.scrollHeight;
+
+      element.style.height = sectionHeight + 'px';
+
+      element.addEventListener('transitionend', function (e) {
+        element.removeEventListener('transitionend', arguments.callee);
+
+        element.style.height = null;
+      });
+
+      element.setAttribute('data-collapsed', 'false');
+    }
+
+    button.addEventListener('click', function (e) {
+      var isCollapsed = target.getAttribute('data-collapsed') === 'true';
+
+      if (isCollapsed) {
+        expandSection(target)
+        section.setAttribute('data-collapsed', 'false')
+      } else {
+        collapseSection(target)
+      }
+    });
+  </script>
+</body>
+
+</html>

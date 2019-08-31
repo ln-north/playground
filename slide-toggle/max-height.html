@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>max-heightを使う</title>
+  <style>
+    #target {
+      overflow-y: hidden;
+      max-height: 0;
+      transition: max-height 0.5s ease;
+    }
+
+    #target.open {
+      max-height: 1000px;
+    }
+  </style>
+</head>
+
+<body>
+  <a href="./index.html">戻る</a>
+  <h1>max-heightを使う方法</h1>
+  <button id="button">開く</button>
+  <div id="target">
+    あいうえおあいうえおあいうえおあいうえおあいうえおあいうえおあいうえおあいうえおあいうえおあいうえおあいうえおあいうえおあいうえおあいうえおあいうえおあいうえおあいうえおあいうえおあいうえおあいうえおあいうえおあいうえおあいうえおあいうえおあいうえおあいうえおあいうえおあいうえおあいうえおあいうえおあいうえおあいうえおあいうえおあいうえおあいうえおあいうえおあいうえおあいうえおあいうえおあいうえおあいうえおあいうえおあいうえおあいうえおあいうえおあいうえおあいうえおあいうえおあいうえおあいうえおあいうえおあいうえおあいうえおあいうえおあいうえおあいうえおあいうえおあいうえおあいうえおあいうえおあいうえおあいうえおあいうえおあいうえおあいうえおあいうえおあいうえおあいうえおあいうえおあいうえおあいうえおあいうえおあいうえおあいうえおあいうえおあいうえおあいうえおあいうえおあいうえおあいうえおあいうえおあいうえおあいうえおあいうえおあいうえおあいうえおあいうえおあいうえおあいうえおあいうえおあいうえおあいうえおあいうえおあいうえおあいうえおあいうえおあいうえおあいうえおあいうえおあいうえおあいうえおあいうえおあいうえおあいうえおあいうえおあいうえお
+  </div>
+  <script>
+    const button = document.getElementById('button');
+    const target = document.getElementById('target');
+
+    button.addEventListener('click', () => {
+      if (target.classList.contains('open')) {
+        target.classList.remove('open');
+      } else {
+        target.classList.add('open');
+      }
+    });
+  </script>
+</body>
+
+</html>
