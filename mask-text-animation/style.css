@@ -1,0 +1,159 @@
+:root {
+  --font-swap-delay: 2s;
+  --step-delay: .2s;
+  --reveal-delay: 1s;
+}
+
+html,
+body {
+  all: unset;
+  font-family: vdl-logojrblack, sans-serif;
+  font-weight: 900;
+  font-style: normal;
+  background-color: #000;
+  color: #fff;
+}
+
+body {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100vw;
+  height: 100vh;
+}
+
+section {
+  display: flex;
+  flex-flow: column nowrap;
+  align-items: flex-start;
+  justify-content: flex-start;
+  margin: 0 auto;
+}
+
+h2 {
+  all: unset;
+  font-size: calc(100vw * 120 / 1920);
+  line-height: 1.1;
+}
+
+p {
+  all: unset;
+  font-size: calc(100vw * 44 / 1920);
+  line-height: 1.5;
+}
+
+h2 + p {
+  margin-top: calc(100vw * 44 / 1920);
+}
+
+.mask-text {
+  display: inline-block;
+  position: relative;
+  overflow: hidden;
+  white-space: nowrap;
+  padding: calc(100vw * 4 / 1920) calc(100vw * 8 / 1920);
+  animation-name: show-mask;
+  animation-duration: .5s;
+  animation-timing-function: ease;
+  animation-fill-mode: both;
+  transform-origin: top left;
+}
+
+@keyframes show-mask {
+  0% {
+    transform: scaleX(0);
+  }
+  100% {
+    transform: scaleX(1);
+  }
+}
+
+h2 .mask-text:nth-of-type(1) {
+  animation-delay: calc(var(--font-swap-delay) + var(--step-delay) * (1 - 1));
+}
+
+h2 .mask-text:nth-of-type(2) {
+  animation-delay: calc(var(--font-swap-delay) + var(--step-delay) * (2 - 1));
+}
+
+p .mask-text:nth-of-type(1) {
+  animation-delay: calc(var(--font-swap-delay) + var(--step-delay) * (2 + 1 - 1));
+}
+
+p .mask-text:nth-of-type(2) {
+  animation-delay: calc(var(--font-swap-delay) + var(--step-delay) * (2 + 2 - 1));
+}
+
+p .mask-text:nth-of-type(3) {
+  animation-delay: calc(var(--font-swap-delay) + var(--step-delay) * (2 + 3 - 1));
+}
+
+p .mask-text:nth-of-type(4) {
+  animation-delay: calc(var(--font-swap-delay) + var(--step-delay) * (2 + 4 - 1));
+}
+
+p .mask-text:nth-of-type(5) {
+  animation-delay: calc(var(--font-swap-delay) + var(--step-delay) * (2 + 5 - 1));
+}
+
+p .mask-text:nth-of-type(6) {
+  animation-delay: calc(var(--font-swap-delay) + var(--step-delay) * (2 + 6 - 1));
+}
+
+.mask-text::after {
+  content: "";
+  display: block;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: #fff;
+  transform-origin: top right;
+  animation-name: reveal-mask;
+  animation-duration: .6s;
+  animation-timing-function: ease;
+  animation-fill-mode: both;
+}
+
+h2 .mask-text:nth-of-type(1)::after {
+  animation-delay: calc(var(--font-swap-delay) + var(--reveal-delay) + var(--step-delay) * (1 - 1));
+}
+
+h2 .mask-text:nth-of-type(2)::after {
+  animation-delay: calc(var(--font-swap-delay) + var(--reveal-delay) + var(--step-delay) * (2 - 1));
+}
+
+p .mask-text:nth-of-type(1)::after {
+  animation-delay: calc(var(--font-swap-delay) + var(--reveal-delay) + var(--step-delay) * (2 + 1 - 1));
+}
+
+p .mask-text:nth-of-type(2)::after {
+  animation-delay: calc(var(--font-swap-delay) + var(--reveal-delay) + var(--step-delay) * (2 + 2 - 1));
+}
+
+p .mask-text:nth-of-type(3)::after {
+  animation-delay: calc(var(--font-swap-delay) + var(--reveal-delay) + var(--step-delay) * (2 + 3 - 1));
+}
+
+p .mask-text:nth-of-type(4)::after {
+  animation-delay: calc(var(--font-swap-delay) + var(--reveal-delay) + var(--step-delay) * (2 + 4 - 1));
+}
+
+p .mask-text:nth-of-type(5)::after {
+  animation-delay: calc(var(--font-swap-delay) + var(--reveal-delay) + var(--step-delay) * (2 + 5 - 1));
+}
+
+p .mask-text:nth-of-type(6)::after {
+  animation-delay: calc(var(--font-swap-delay) + var(--reveal-delay) + var(--step-delay) * (2 + 6 - 1));
+}
+
+
+@keyframes reveal-mask {
+  0% {
+    transform: scaleX(1);
+  }
+  100% {
+    transform: scaleX(0);
+  }
+}
