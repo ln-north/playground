@@ -57,6 +57,7 @@ h2 + p {
   animation-timing-function: ease;
   animation-fill-mode: both;
   transform-origin: top left;
+  will-change: transform;
 }
 
 @keyframes show-mask {
@@ -114,6 +115,16 @@ p .mask-text:nth-of-type(6) {
   animation-duration: .6s;
   animation-timing-function: ease;
   animation-fill-mode: both;
+  will-change: transform;
+}
+
+@keyframes reveal-mask {
+  0% {
+    transform: scaleX(1);
+  }
+  100% {
+    transform: scaleX(0);
+  }
 }
 
 h2 .mask-text:nth-of-type(1)::after {
@@ -146,14 +157,4 @@ p .mask-text:nth-of-type(5)::after {
 
 p .mask-text:nth-of-type(6)::after {
   animation-delay: calc(var(--font-swap-delay) + var(--reveal-delay) + var(--step-delay) * (2 + 6 - 1));
-}
-
-
-@keyframes reveal-mask {
-  0% {
-    transform: scaleX(1);
-  }
-  100% {
-    transform: scaleX(0);
-  }
 }
