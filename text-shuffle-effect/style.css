@@ -1,0 +1,437 @@
+:root {
+  --display-font-size: calc(100vw * 120 / 1920);
+  --delay-time: .03s;
+  --duration-time: .9s;
+}
+
+html,
+body {
+  all: initial;
+}
+
+body {
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #000;
+}
+
+.shuffle-text {
+  width: calc(var(--display-font-size) * 6.5);
+  height: calc(var(--display-font-size) * 3);
+  margin-left: calc(var(--display-font-size) * 0.5);
+  color: #fff;
+  font-family: 'Helvetica Neue', Arial, sans-serif;
+  font-weight: bold;
+  font-size: var(--display-font-size);
+  line-height: 1;
+  letter-spacing: 0.01em;
+  white-space: pre;
+}
+
+.shuffle-letter {
+  display: inline-block;
+  font-size: 0;
+  animation-name: shuffle-letter-content;
+  animation-duration: var(--duration-time);
+  animation-timing-function: linear;
+  animation-fill-mode: both;
+}
+
+.shuffle-letter::before {
+  content: "";
+  display: inline-block;
+  font-size: var(--display-font-size);
+  animation-duration: var(--duration-time);
+  animation-timing-function: linear;
+  animation-fill-mode: both;
+}
+
+@keyframes shuffle-letter-content {
+  0% {
+    font-size: 0;
+  }
+  95% {
+    font-size: 0;
+  }
+  95.1% {
+    font-size: var(--display-font-size);
+  }
+  100% {
+    font-size: var(--display-font-size);
+  }
+}
+
+@keyframes shuffle-letter-1 {
+  5% {
+    content: "_";
+  }
+  10% {
+    content: "P";
+  }
+  15% {
+    content: "-";
+  }
+  20% {
+    content: "A";
+  }
+  25% {
+    content: "'";
+  }
+  30% {
+    content: "_";
+  }
+  35% {
+    content: "\\";
+  }
+  40% {
+    content: "^";
+  }
+  45% {
+    content: "]";
+  }
+  50% {
+    content: "\\";
+  }
+  55% {
+    content: "[";
+  }
+  60% {
+    content: "Z";
+  }
+  65% {
+    content: "Y";
+  }
+  70% {
+    content: "B";
+  }
+  75% {
+    content: "W";
+  }
+  80% {
+    content: "V";
+  }
+  85% {
+    content: "U";
+  }
+  90% {
+    content: "T";
+  }
+  95% {
+    content: "S";
+  }
+  100% {
+    content: "";
+    display: none;
+  }
+}
+
+@keyframes shuffle-letter-2 {
+  5% {
+    content: "_";
+  }
+  10% {
+    content: "_";
+  }
+  15% {
+    content: "-";
+  }
+  20% {
+    content: "-";
+  }
+  25% {
+    content: "M";
+  }
+  30% {
+    content: "L";
+  }
+  35% {
+    content: "K";
+  }
+  40% {
+    content: "J";
+  }
+  45% {
+    content: "I";
+  }
+  50% {
+    content: "H";
+  }
+  55% {
+    content: "G";
+  }
+  60% {
+    content: "F";
+  }
+  65% {
+    content: "E";
+  }
+  70% {
+    content: "D";
+  }
+  75% {
+    content: "C";
+  }
+  80% {
+    content: "B";
+  }
+  85% {
+    content: "'";
+  }
+  90% {
+    content: "_";
+  }
+  95% {
+    content: "^";
+  }
+  100% {
+    content: "";
+    display: none;
+  }
+}
+
+@keyframes shuffle-letter-3 {
+  5% {
+    content: "@";
+  }
+  10% {
+    content: "-";
+  }
+  15% {
+    content: "Y";
+  }
+  20% {
+    content: "X";
+  }
+  25% {
+    content: "W";
+  }
+  30% {
+    content: "V";
+  }
+  35% {
+    content: "U";
+  }
+  40% {
+    content: "J";
+  }
+  45% {
+    content: "T";
+  }
+  50% {
+    content: "S";
+  }
+  55% {
+    content: "R";
+  }
+  60% {
+    content: "!";
+  }
+  65% {
+    content: "Q";
+  }
+  70% {
+    content: "D";
+  }
+  75% {
+    content: "P";
+  }
+  80% {
+    content: "<";
+  }
+  85% {
+    content: "";
+  }
+  90% {
+    content: "O";
+  }
+  95% {
+    content: "=";
+  }
+  100% {
+    content: "";
+    display: none;
+  }
+}
+
+.shuffle-letter:nth-of-type(1) {
+  animation-delay: calc(var(--delay-time) * 0);
+}
+
+.shuffle-letter:nth-of-type(1)::before {
+  animation-name: shuffle-letter-1;
+  animation-delay: calc(var(--delay-time) * 0);
+}
+
+.shuffle-letter:nth-of-type(2) {
+  animation-delay: calc(var(--delay-time) * 1);
+}
+
+.shuffle-letter:nth-of-type(2)::before {
+  animation-name: shuffle-letter-2;
+  animation-delay: calc(var(--delay-time) * 1);
+}
+
+.shuffle-letter:nth-of-type(3) {
+  animation-delay: calc(var(--delay-time) * 2);
+}
+
+.shuffle-letter:nth-of-type(3)::before {
+  animation-name: shuffle-letter-1;
+  animation-delay: calc(var(--delay-time) * 2);
+}
+
+.shuffle-letter:nth-of-type(4) {
+  animation-delay: calc(var(--delay-time) * 3);
+}
+
+.shuffle-letter:nth-of-type(4)::before {
+  animation-name: shuffle-letter-3;
+  animation-delay: calc(var(--delay-time) * 3);
+}
+
+.shuffle-letter:nth-of-type(5) {
+  animation-delay: calc(var(--delay-time) * 4);
+}
+
+.shuffle-letter:nth-of-type(5)::before {
+  animation-name: shuffle-letter-2;
+  animation-delay: calc(var(--delay-time) * 4);
+}
+
+.shuffle-letter:nth-of-type(6) {
+  animation-delay: calc(var(--delay-time) * 5);
+}
+
+.shuffle-letter:nth-of-type(6)::before {
+  animation-name: shuffle-letter-3;
+  animation-delay: calc(var(--delay-time) * 5);
+}
+
+.shuffle-letter:nth-of-type(7) {
+  animation-delay: calc(var(--delay-time) * 6);
+}
+
+.shuffle-letter:nth-of-type(7)::before {
+  animation-name: shuffle-letter-1;
+  animation-delay: calc(var(--delay-time) * 6);
+}
+
+.shuffle-letter:nth-of-type(8) {
+  animation-delay: calc(var(--delay-time) * 7);
+}
+
+.shuffle-letter:nth-of-type(8)::before {
+  animation-name: shuffle-letter-1;
+  animation-delay: calc(var(--delay-time) * 7);
+}
+
+.shuffle-letter:nth-of-type(9) {
+  animation-delay: calc(var(--delay-time) * 8);
+}
+
+.shuffle-letter:nth-of-type(9)::before {
+  animation-name: shuffle-letter-2;
+  animation-delay: calc(var(--delay-time) * 8);
+}
+
+.shuffle-letter:nth-of-type(10) {
+  animation-delay: calc(var(--delay-time) * 9);
+}
+
+.shuffle-letter:nth-of-type(10)::before {
+  animation-name: shuffle-letter-3;
+  animation-delay: calc(var(--delay-time) * 9);
+}
+
+.shuffle-letter:nth-of-type(11) {
+  animation-delay: calc(var(--delay-time) * 10);
+}
+
+.shuffle-letter:nth-of-type(11)::before {
+  animation-name: shuffle-letter-2;
+  animation-delay: calc(var(--delay-time) * 10);
+}
+
+.shuffle-letter:nth-of-type(12) {
+  animation-delay: calc(var(--delay-time) * 11);
+}
+
+.shuffle-letter:nth-of-type(12)::before {
+  animation-name: shuffle-letter-1;
+  animation-delay: calc(var(--delay-time) * 11);
+}
+
+.shuffle-letter:nth-of-type(13) {
+  animation-delay: calc(var(--delay-time) * 12);
+}
+
+.shuffle-letter:nth-of-type(13)::before {
+  animation-name: shuffle-letter-2;
+  animation-delay: calc(var(--delay-time) * 12);
+}
+
+.shuffle-letter:nth-of-type(14) {
+  animation-delay: calc(var(--delay-time) * 13);
+}
+
+.shuffle-letter:nth-of-type(14)::before {
+  animation-name: shuffle-letter-2;
+  animation-delay: calc(var(--delay-time) * 13);
+}
+
+.shuffle-letter:nth-of-type(15) {
+  animation-delay: calc(var(--delay-time) * 14);
+}
+
+.shuffle-letter:nth-of-type(15)::before {
+  animation-name: shuffle-letter-3;
+  animation-delay: calc(var(--delay-time) * 14);
+}
+
+.shuffle-letter:nth-of-type(16) {
+  animation-delay: calc(var(--delay-time) * 15);
+}
+
+.shuffle-letter:nth-of-type(16)::before {
+  animation-name: shuffle-letter-2;
+  animation-delay: calc(var(--delay-time) * 15);
+}
+
+.shuffle-letter:nth-of-type(17) {
+  animation-delay: calc(var(--delay-time) * 16);
+}
+
+.shuffle-letter:nth-of-type(17)::before {
+  animation-name: shuffle-letter-1;
+  animation-delay: calc(var(--delay-time) * 16);
+}
+
+.shuffle-letter:nth-of-type(18) {
+  animation-delay: calc(var(--delay-time) * 17);
+}
+
+.shuffle-letter:nth-of-type(18)::before {
+  animation-name: shuffle-letter-1;
+  animation-delay: calc(var(--delay-time) * 17);
+}
+
+.shuffle-letter:nth-of-type(19) {
+  animation-delay: calc(var(--delay-time) * 18);
+}
+
+.shuffle-letter:nth-of-type(19)::before {
+  animation-name: shuffle-letter-2;
+  animation-delay: calc(var(--delay-time) * 18);
+}
+
+.shuffle-letter:nth-of-type(20) {
+  animation-delay: calc(var(--delay-time) * 19);
+}
+
+.shuffle-letter:nth-of-type(20)::before {
+  animation-name: shuffle-letter-2;
+  animation-delay: calc(var(--delay-time) * 19);
+}
