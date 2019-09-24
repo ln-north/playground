@@ -1,0 +1,859 @@
+:root {
+  --display-font-size: calc(100vw * 40 / 1920);
+  --delay-time: .03s;
+  --duration-time: .8s;
+  --shadow-1-delay-time: .1s;
+  --shadow-2-delay-time: .1s;
+  --shadow-3-delay-time: .1s;
+}
+
+html,
+body {
+  all: initial;
+}
+
+body {
+  background-color: #fff;
+}
+
+body,
+.text-layer,
+.shadow-layer-1,
+.shadow-layer-2,
+.shadow-layer-3 {
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.text-layer,
+.shadow-layer-1,
+.shadow-layer-2,
+.shadow-layer-3 {
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+.shadow-layer-1,
+.shadow-layer-2,
+.shadow-layer-3 {
+  user-select: none;
+}
+
+.shuffle-text {
+  width: calc(var(--display-font-size) * 10);
+  height: calc(var(--display-font-size) * 3);
+  font-family: 'Helvetica Neue', Arial, sans-serif;
+  font-weight: thin;
+  font-size: var(--display-font-size);
+  line-height: 1;
+  letter-spacing: 0.01em;
+  white-space: pre;
+  mix-blend-mode: multiply;
+}
+
+.shadow-layer-1 .shuffle-text {
+  color: rgba(255, 0, 0, .0);
+}
+.shadow-layer-2 .shuffle-text {
+  color: rgba(0, 255, 0, .0);
+}
+.shadow-layer-3 .shuffle-text {
+  color: rgba(0, 0, 255, .3);
+}
+
+.text-layer .shuffle-text {
+  color: rgba(0, 0, 0, 1);
+}
+
+.shuffle-letter {
+  display: inline-block;
+  animation-name: shuffle-letter-content;
+  animation-duration: var(--duration-time);
+  animation-timing-function: linear;
+  animation-fill-mode: both;
+}
+
+.shuffle-letter::before {
+  content: "";
+  display: inline-block;
+  font-size: var(--display-font-size);
+  animation-duration: var(--duration-time);
+  animation-timing-function: linear;
+  animation-fill-mode: both;
+}
+
+@keyframes shuffle-letter-content {
+  0% {
+    font-size: 0;
+  }
+  95% {
+    font-size: 0;
+  }
+  95.1% {
+    font-size: var(--display-font-size);
+  }
+  100% {
+    font-size: var(--display-font-size);
+  }
+}
+
+@keyframes shuffle-letter-1 {
+  5% {
+    content: "_";
+  }
+  10% {
+    content: "P";
+  }
+  15% {
+    content: "-";
+  }
+  20% {
+    content: "A";
+  }
+  25% {
+    content: "'";
+  }
+  30% {
+    content: "_";
+  }
+  35% {
+    content: "\\";
+  }
+  40% {
+    content: "^";
+  }
+  45% {
+    content: "]";
+  }
+  50% {
+    content: "\\";
+  }
+  55% {
+    content: "[";
+  }
+  60% {
+    content: "Z";
+  }
+  65% {
+    content: "Y";
+  }
+  70% {
+    content: "B";
+  }
+  75% {
+    content: "W";
+  }
+  80% {
+    content: "V";
+  }
+  85% {
+    content: "U";
+  }
+  90% {
+    content: "T";
+  }
+  95% {
+    content: "S";
+  }
+  100% {
+    content: "";
+    display: none;
+  }
+}
+
+@keyframes shuffle-letter-2 {
+  5% {
+    content: "_";
+  }
+  10% {
+    content: "_";
+  }
+  15% {
+    content: "-";
+  }
+  20% {
+    content: "-";
+  }
+  25% {
+    content: "M";
+  }
+  30% {
+    content: "L";
+  }
+  35% {
+    content: "K";
+  }
+  40% {
+    content: "J";
+  }
+  45% {
+    content: "I";
+  }
+  50% {
+    content: "H";
+  }
+  55% {
+    content: "G";
+  }
+  60% {
+    content: "F";
+  }
+  65% {
+    content: "E";
+  }
+  70% {
+    content: "D";
+  }
+  75% {
+    content: "C";
+  }
+  80% {
+    content: "B";
+  }
+  85% {
+    content: "'";
+  }
+  90% {
+    content: "_";
+  }
+  95% {
+    content: "^";
+  }
+  100% {
+    content: "";
+    display: none;
+  }
+}
+
+@keyframes shuffle-letter-3 {
+  5% {
+    content: "@";
+  }
+  10% {
+    content: "-";
+  }
+  15% {
+    content: "Y";
+  }
+  20% {
+    content: "X";
+  }
+  25% {
+    content: "W";
+  }
+  30% {
+    content: "V";
+  }
+  35% {
+    content: "U";
+  }
+  40% {
+    content: "J";
+  }
+  45% {
+    content: "T";
+  }
+  50% {
+    content: "S";
+  }
+  55% {
+    content: "R";
+  }
+  60% {
+    content: "!";
+  }
+  65% {
+    content: "Q";
+  }
+  70% {
+    content: "D";
+  }
+  75% {
+    content: "P";
+  }
+  80% {
+    content: "<";
+  }
+  85% {
+    content: "";
+  }
+  90% {
+    content: "O";
+  }
+  95% {
+    content: "=";
+  }
+  100% {
+    content: "";
+    display: none;
+  }
+}
+
+.text-layer .shuffle-letter:nth-of-type(1) {
+  animation-delay: calc(var(--shadow-1-delay-time) + var(--shadow-2-delay-time) + var(--shadow-3-delay-time) + var(--delay-time) * 0);
+}
+.text-layer .shuffle-letter:nth-of-type(1)::before {
+  animation-name: shuffle-letter-1;
+  animation-delay: calc(var(--shadow-1-delay-time) + var(--shadow-2-delay-time) + var(--shadow-3-delay-time) + var(--delay-time) * 0);
+}
+.text-layer .shuffle-letter:nth-of-type(2) {
+  animation-delay: calc(var(--shadow-1-delay-time) + var(--shadow-2-delay-time) + var(--shadow-3-delay-time) + var(--delay-time) * 1);
+}
+.text-layer .shuffle-letter:nth-of-type(2)::before {
+  animation-name: shuffle-letter-2;
+  animation-delay: calc(var(--shadow-1-delay-time) + var(--shadow-2-delay-time) + var(--shadow-3-delay-time) + var(--delay-time) * 1);
+}
+.text-layer .shuffle-letter:nth-of-type(3) {
+  animation-delay: calc(var(--shadow-1-delay-time) + var(--shadow-2-delay-time) + var(--shadow-3-delay-time) + var(--delay-time) * 2);
+}
+.text-layer .shuffle-letter:nth-of-type(3)::before {
+  animation-name: shuffle-letter-1;
+  animation-delay: calc(var(--shadow-1-delay-time) + var(--shadow-2-delay-time) + var(--shadow-3-delay-time) + var(--delay-time) * 2);
+}
+.text-layer .shuffle-letter:nth-of-type(4) {
+  animation-delay: calc(var(--shadow-1-delay-time) + var(--shadow-2-delay-time) + var(--shadow-3-delay-time) + var(--delay-time) * 3);
+}
+.text-layer .shuffle-letter:nth-of-type(4)::before {
+  animation-name: shuffle-letter-3;
+  animation-delay: calc(var(--shadow-1-delay-time) + var(--shadow-2-delay-time) + var(--shadow-3-delay-time) + var(--delay-time) * 3);
+}
+.text-layer .shuffle-letter:nth-of-type(5) {
+  animation-delay: calc(var(--shadow-1-delay-time) + var(--shadow-2-delay-time) + var(--shadow-3-delay-time) + var(--delay-time) * 4);
+}
+.text-layer .shuffle-letter:nth-of-type(5)::before {
+  animation-name: shuffle-letter-2;
+  animation-delay: calc(var(--shadow-1-delay-time) + var(--shadow-2-delay-time) + var(--shadow-3-delay-time) + var(--delay-time) * 4);
+}
+.text-layer .shuffle-letter:nth-of-type(6) {
+  animation-delay: calc(var(--shadow-1-delay-time) + var(--shadow-2-delay-time) + var(--shadow-3-delay-time) + var(--delay-time) * 5);
+}
+.text-layer .shuffle-letter:nth-of-type(6)::before {
+  animation-name: shuffle-letter-3;
+  animation-delay: calc(var(--shadow-1-delay-time) + var(--shadow-2-delay-time) + var(--shadow-3-delay-time) + var(--delay-time) * 5);
+}
+.text-layer .shuffle-letter:nth-of-type(7) {
+  animation-delay: calc(var(--shadow-1-delay-time) + var(--shadow-2-delay-time) + var(--shadow-3-delay-time) + var(--delay-time) * 6);
+}
+.text-layer .shuffle-letter:nth-of-type(7)::before {
+  animation-name: shuffle-letter-1;
+  animation-delay: calc(var(--shadow-1-delay-time) + var(--shadow-2-delay-time) + var(--shadow-3-delay-time) + var(--delay-time) * 6);
+}
+.text-layer .shuffle-letter:nth-of-type(8) {
+  animation-delay: calc(var(--shadow-1-delay-time) + var(--shadow-2-delay-time) + var(--shadow-3-delay-time) + var(--delay-time) * 7);
+}
+.text-layer .shuffle-letter:nth-of-type(8)::before {
+  animation-name: shuffle-letter-1;
+  animation-delay: calc(var(--shadow-1-delay-time) + var(--shadow-2-delay-time) + var(--shadow-3-delay-time) + var(--delay-time) * 7);
+}
+.text-layer .shuffle-letter:nth-of-type(9) {
+  animation-delay: calc(var(--shadow-1-delay-time) + var(--shadow-2-delay-time) + var(--shadow-3-delay-time) + var(--delay-time) * 8);
+}
+.text-layer .shuffle-letter:nth-of-type(9)::before {
+  animation-name: shuffle-letter-2;
+  animation-delay: calc(var(--shadow-1-delay-time) + var(--shadow-2-delay-time) + var(--shadow-3-delay-time) + var(--delay-time) * 8);
+}
+.text-layer .shuffle-letter:nth-of-type(10) {
+  animation-delay: calc(var(--shadow-1-delay-time) + var(--shadow-2-delay-time) + var(--shadow-3-delay-time) + var(--delay-time) * 9);
+}
+.text-layer .shuffle-letter:nth-of-type(10)::before {
+  animation-name: shuffle-letter-3;
+  animation-delay: calc(var(--shadow-1-delay-time) + var(--shadow-2-delay-time) + var(--shadow-3-delay-time) + var(--delay-time) * 9);
+}
+.text-layer .shuffle-letter:nth-of-type(11) {
+  animation-delay: calc(var(--shadow-1-delay-time) + var(--shadow-2-delay-time) + var(--shadow-3-delay-time) + var(--delay-time) * 10);
+}
+.text-layer .shuffle-letter:nth-of-type(11)::before {
+  animation-name: shuffle-letter-2;
+  animation-delay: calc(var(--shadow-1-delay-time) + var(--shadow-2-delay-time) + var(--shadow-3-delay-time) + var(--delay-time) * 10);
+}
+.text-layer .shuffle-letter:nth-of-type(12) {
+  animation-delay: calc(var(--shadow-1-delay-time) + var(--shadow-2-delay-time) + var(--shadow-3-delay-time) + var(--delay-time) * 11);
+}
+.text-layer .shuffle-letter:nth-of-type(12)::before {
+  animation-name: shuffle-letter-1;
+  animation-delay: calc(var(--shadow-1-delay-time) + var(--shadow-2-delay-time) + var(--shadow-3-delay-time) + var(--delay-time) * 11);
+}
+.text-layer .shuffle-letter:nth-of-type(13) {
+  animation-delay: calc(var(--shadow-1-delay-time) + var(--shadow-2-delay-time) + var(--shadow-3-delay-time) + var(--delay-time) * 12);
+}
+.text-layer .shuffle-letter:nth-of-type(13)::before {
+  animation-name: shuffle-letter-2;
+  animation-delay: calc(var(--shadow-1-delay-time) + var(--shadow-2-delay-time) + var(--shadow-3-delay-time) + var(--delay-time) * 12);
+}
+.text-layer .shuffle-letter:nth-of-type(14) {
+  animation-delay: calc(var(--shadow-1-delay-time) + var(--shadow-2-delay-time) + var(--shadow-3-delay-time) + var(--delay-time) * 13);
+}
+.text-layer .shuffle-letter:nth-of-type(14)::before {
+  animation-name: shuffle-letter-2;
+  animation-delay: calc(var(--shadow-1-delay-time) + var(--shadow-2-delay-time) + var(--shadow-3-delay-time) + var(--delay-time) * 13);
+}
+.text-layer .shuffle-letter:nth-of-type(15) {
+  animation-delay: calc(var(--shadow-1-delay-time) + var(--shadow-2-delay-time) + var(--shadow-3-delay-time) + var(--delay-time) * 14);
+}
+.text-layer .shuffle-letter:nth-of-type(15)::before {
+  animation-name: shuffle-letter-3;
+  animation-delay: calc(var(--shadow-1-delay-time) + var(--shadow-2-delay-time) + var(--shadow-3-delay-time) + var(--delay-time) * 14);
+}
+.text-layer .shuffle-letter:nth-of-type(16) {
+  animation-delay: calc(var(--shadow-1-delay-time) + var(--shadow-2-delay-time) + var(--shadow-3-delay-time) + var(--delay-time) * 15);
+}
+.text-layer .shuffle-letter:nth-of-type(16)::before {
+  animation-name: shuffle-letter-2;
+  animation-delay: calc(var(--shadow-1-delay-time) + var(--shadow-2-delay-time) + var(--shadow-3-delay-time) + var(--delay-time) * 15);
+}
+.text-layer .shuffle-letter:nth-of-type(17) {
+  animation-delay: calc(var(--shadow-1-delay-time) + var(--shadow-2-delay-time) + var(--shadow-3-delay-time) + var(--delay-time) * 16);
+}
+.text-layer .shuffle-letter:nth-of-type(17)::before {
+  animation-name: shuffle-letter-1;
+  animation-delay: calc(var(--shadow-1-delay-time) + var(--shadow-2-delay-time) + var(--shadow-3-delay-time) + var(--delay-time) * 16);
+}
+.text-layer .shuffle-letter:nth-of-type(18) {
+  animation-delay: calc(var(--shadow-1-delay-time) + var(--shadow-2-delay-time) + var(--shadow-3-delay-time) + var(--delay-time) * 17);
+}
+.text-layer .shuffle-letter:nth-of-type(18)::before {
+  animation-name: shuffle-letter-1;
+  animation-delay: calc(var(--shadow-1-delay-time) + var(--shadow-2-delay-time) + var(--shadow-3-delay-time) + var(--delay-time) * 17);
+}
+.text-layer .shuffle-letter:nth-of-type(19) {
+  animation-delay: calc(var(--shadow-1-delay-time) + var(--shadow-2-delay-time) + var(--shadow-3-delay-time) + var(--delay-time) * 18);
+}
+.text-layer .shuffle-letter:nth-of-type(19)::before {
+  animation-name: shuffle-letter-2;
+  animation-delay: calc(var(--shadow-1-delay-time) + var(--shadow-2-delay-time) + var(--shadow-3-delay-time) + var(--delay-time) * 18);
+}
+.text-layer .shuffle-letter:nth-of-type(20) {
+  animation-delay: calc(var(--shadow-1-delay-time) + var(--shadow-2-delay-time) + var(--shadow-3-delay-time) + var(--delay-time) * 19);
+}
+.text-layer .shuffle-letter:nth-of-type(20)::before {
+  animation-name: shuffle-letter-2;
+  animation-delay: calc(var(--shadow-1-delay-time) + var(--shadow-2-delay-time) + var(--shadow-3-delay-time) + var(--delay-time) * 19);
+}
+
+.shadow-layer-1 .shuffle-letter:nth-of-type(1) {
+  animation-delay: calc(var(--delay-time) * 0);
+}
+.shadow-layer-1 .shuffle-letter:nth-of-type(1)::before {
+  animation-name: shuffle-letter-1;
+  animation-delay: calc(var(--delay-time) * 0);
+}
+.shadow-layer-1 .shuffle-letter:nth-of-type(2) {
+  animation-delay: calc(var(--delay-time) * 1);
+}
+.shadow-layer-1 .shuffle-letter:nth-of-type(2)::before {
+  animation-name: shuffle-letter-2;
+  animation-delay: calc(var(--delay-time) * 1);
+}
+.shadow-layer-1 .shuffle-letter:nth-of-type(3) {
+  animation-delay: calc(var(--delay-time) * 2);
+}
+.shadow-layer-1 .shuffle-letter:nth-of-type(3)::before {
+  animation-name: shuffle-letter-1;
+  animation-delay: calc(var(--delay-time) * 2);
+}
+.shadow-layer-1 .shuffle-letter:nth-of-type(4) {
+  animation-delay: calc(var(--delay-time) * 3);
+}
+.shadow-layer-1 .shuffle-letter:nth-of-type(4)::before {
+  animation-name: shuffle-letter-3;
+  animation-delay: calc(var(--delay-time) * 3);
+}
+.shadow-layer-1 .shuffle-letter:nth-of-type(5) {
+  animation-delay: calc(var(--delay-time) * 4);
+}
+.shadow-layer-1 .shuffle-letter:nth-of-type(5)::before {
+  animation-name: shuffle-letter-2;
+  animation-delay: calc(var(--delay-time) * 4);
+}
+.shadow-layer-1 .shuffle-letter:nth-of-type(6) {
+  animation-delay: calc(var(--delay-time) * 5);
+}
+.shadow-layer-1 .shuffle-letter:nth-of-type(6)::before {
+  animation-name: shuffle-letter-3;
+  animation-delay: calc(var(--delay-time) * 5);
+}
+.shadow-layer-1 .shuffle-letter:nth-of-type(7) {
+  animation-delay: calc(var(--delay-time) * 6);
+}
+.shadow-layer-1 .shuffle-letter:nth-of-type(7)::before {
+  animation-name: shuffle-letter-1;
+  animation-delay: calc(var(--delay-time) * 6);
+}
+.shadow-layer-1 .shuffle-letter:nth-of-type(8) {
+  animation-delay: calc(var(--delay-time) * 7);
+}
+.shadow-layer-1 .shuffle-letter:nth-of-type(8)::before {
+  animation-name: shuffle-letter-1;
+  animation-delay: calc(var(--delay-time) * 7);
+}
+.shadow-layer-1 .shuffle-letter:nth-of-type(9) {
+  animation-delay: calc(var(--delay-time) * 8);
+}
+.shadow-layer-1 .shuffle-letter:nth-of-type(9)::before {
+  animation-name: shuffle-letter-2;
+  animation-delay: calc(var(--delay-time) * 8);
+}
+.shadow-layer-1 .shuffle-letter:nth-of-type(10) {
+  animation-delay: calc(var(--delay-time) * 9);
+}
+.shadow-layer-1 .shuffle-letter:nth-of-type(10)::before {
+  animation-name: shuffle-letter-3;
+  animation-delay: calc(var(--delay-time) * 9);
+}
+.shadow-layer-1 .shuffle-letter:nth-of-type(11) {
+  animation-delay: calc(var(--delay-time) * 10);
+}
+.shadow-layer-1 .shuffle-letter:nth-of-type(11)::before {
+  animation-name: shuffle-letter-2;
+  animation-delay: calc(var(--delay-time) * 10);
+}
+.shadow-layer-1 .shuffle-letter:nth-of-type(12) {
+  animation-delay: calc(var(--delay-time) * 11);
+}
+.shadow-layer-1 .shuffle-letter:nth-of-type(12)::before {
+  animation-name: shuffle-letter-1;
+  animation-delay: calc(var(--delay-time) * 11);
+}
+.shadow-layer-1 .shuffle-letter:nth-of-type(13) {
+  animation-delay: calc(var(--delay-time) * 12);
+}
+.shadow-layer-1 .shuffle-letter:nth-of-type(13)::before {
+  animation-name: shuffle-letter-2;
+  animation-delay: calc(var(--delay-time) * 12);
+}
+.shadow-layer-1 .shuffle-letter:nth-of-type(14) {
+  animation-delay: calc(var(--delay-time) * 13);
+}
+.shadow-layer-1 .shuffle-letter:nth-of-type(14)::before {
+  animation-name: shuffle-letter-2;
+  animation-delay: calc(var(--delay-time) * 13);
+}
+.shadow-layer-1 .shuffle-letter:nth-of-type(15) {
+  animation-delay: calc(var(--delay-time) * 14);
+}
+.shadow-layer-1 .shuffle-letter:nth-of-type(15)::before {
+  animation-name: shuffle-letter-3;
+  animation-delay: calc(var(--delay-time) * 14);
+}
+.shadow-layer-1 .shuffle-letter:nth-of-type(16) {
+  animation-delay: calc(var(--delay-time) * 15);
+}
+.shadow-layer-1 .shuffle-letter:nth-of-type(16)::before {
+  animation-name: shuffle-letter-2;
+  animation-delay: calc(var(--delay-time) * 15);
+}
+.shadow-layer-1 .shuffle-letter:nth-of-type(17) {
+  animation-delay: calc(var(--delay-time) * 16);
+}
+.shadow-layer-1 .shuffle-letter:nth-of-type(17)::before {
+  animation-name: shuffle-letter-1;
+  animation-delay: calc(var(--delay-time) * 16);
+}
+.shadow-layer-1 .shuffle-letter:nth-of-type(18) {
+  animation-delay: calc(var(--delay-time) * 17);
+}
+.shadow-layer-1 .shuffle-letter:nth-of-type(18)::before {
+  animation-name: shuffle-letter-1;
+  animation-delay: calc(var(--delay-time) * 17);
+}
+.shadow-layer-1 .shuffle-letter:nth-of-type(19) {
+  animation-delay: calc(var(--delay-time) * 18);
+}
+.shadow-layer-1 .shuffle-letter:nth-of-type(19)::before {
+  animation-name: shuffle-letter-2;
+  animation-delay: calc(var(--delay-time) * 18);
+}
+.shadow-layer-1 .shuffle-letter:nth-of-type(20) {
+  animation-delay: calc(var(--delay-time) * 19);
+}
+.shadow-layer-1 .shuffle-letter:nth-of-type(20)::before {
+  animation-name: shuffle-letter-2;
+  animation-delay: calc(var(--delay-time) * 19);
+}
+
+.shadow-layer-2 .shuffle-letter:nth-of-type(1) {
+  animation-delay: calc(var(--shadow-1-delay-time) + var(--delay-time) * 0);
+}
+.shadow-layer-2 .shuffle-letter:nth-of-type(1)::before {
+  animation-name: shuffle-letter-1;
+  animation-delay: calc(var(--shadow-1-delay-time) + var(--delay-time) * 0);
+}
+.shadow-layer-2 .shuffle-letter:nth-of-type(2) {
+  animation-delay: calc(var(--shadow-1-delay-time) + var(--delay-time) * 1);
+}
+.shadow-layer-2 .shuffle-letter:nth-of-type(2)::before {
+  animation-name: shuffle-letter-2;
+  animation-delay: calc(var(--shadow-1-delay-time) + var(--delay-time) * 1);
+}
+.shadow-layer-2 .shuffle-letter:nth-of-type(3) {
+  animation-delay: calc(var(--shadow-1-delay-time) + var(--delay-time) * 2);
+}
+.shadow-layer-2 .shuffle-letter:nth-of-type(3)::before {
+  animation-name: shuffle-letter-1;
+  animation-delay: calc(var(--shadow-1-delay-time) + var(--delay-time) * 2);
+}
+.shadow-layer-2 .shuffle-letter:nth-of-type(4) {
+  animation-delay: calc(var(--shadow-1-delay-time) + var(--delay-time) * 3);
+}
+.shadow-layer-2 .shuffle-letter:nth-of-type(4)::before {
+  animation-name: shuffle-letter-3;
+  animation-delay: calc(var(--shadow-1-delay-time) + var(--delay-time) * 3);
+}
+.shadow-layer-2 .shuffle-letter:nth-of-type(5) {
+  animation-delay: calc(var(--shadow-1-delay-time) + var(--delay-time) * 4);
+}
+.shadow-layer-2 .shuffle-letter:nth-of-type(5)::before {
+  animation-name: shuffle-letter-2;
+  animation-delay: calc(var(--shadow-1-delay-time) + var(--delay-time) * 4);
+}
+.shadow-layer-2 .shuffle-letter:nth-of-type(6) {
+  animation-delay: calc(var(--shadow-1-delay-time) + var(--delay-time) * 5);
+}
+.shadow-layer-2 .shuffle-letter:nth-of-type(6)::before {
+  animation-name: shuffle-letter-3;
+  animation-delay: calc(var(--shadow-1-delay-time) + var(--delay-time) * 5);
+}
+.shadow-layer-2 .shuffle-letter:nth-of-type(7) {
+  animation-delay: calc(var(--shadow-1-delay-time) + var(--delay-time) * 6);
+}
+.shadow-layer-2 .shuffle-letter:nth-of-type(7)::before {
+  animation-name: shuffle-letter-1;
+  animation-delay: calc(var(--shadow-1-delay-time) + var(--delay-time) * 6);
+}
+.shadow-layer-2 .shuffle-letter:nth-of-type(8) {
+  animation-delay: calc(var(--shadow-1-delay-time) + var(--delay-time) * 7);
+}
+.shadow-layer-2 .shuffle-letter:nth-of-type(8)::before {
+  animation-name: shuffle-letter-1;
+  animation-delay: calc(var(--shadow-1-delay-time) + var(--delay-time) * 7);
+}
+.shadow-layer-2 .shuffle-letter:nth-of-type(9) {
+  animation-delay: calc(var(--shadow-1-delay-time) + var(--delay-time) * 8);
+}
+.shadow-layer-2 .shuffle-letter:nth-of-type(9)::before {
+  animation-name: shuffle-letter-2;
+  animation-delay: calc(var(--shadow-1-delay-time) + var(--delay-time) * 8);
+}
+.shadow-layer-2 .shuffle-letter:nth-of-type(10) {
+  animation-delay: calc(var(--shadow-1-delay-time) + var(--delay-time) * 9);
+}
+.shadow-layer-2 .shuffle-letter:nth-of-type(10)::before {
+  animation-name: shuffle-letter-3;
+  animation-delay: calc(var(--shadow-1-delay-time) + var(--delay-time) * 9);
+}
+.shadow-layer-2 .shuffle-letter:nth-of-type(11) {
+  animation-delay: calc(var(--shadow-1-delay-time) + var(--delay-time) * 10);
+}
+.shadow-layer-2 .shuffle-letter:nth-of-type(11)::before {
+  animation-name: shuffle-letter-2;
+  animation-delay: calc(var(--shadow-1-delay-time) + var(--delay-time) * 10);
+}
+.shadow-layer-2 .shuffle-letter:nth-of-type(12) {
+  animation-delay: calc(var(--shadow-1-delay-time) + var(--delay-time) * 11);
+}
+.shadow-layer-2 .shuffle-letter:nth-of-type(12)::before {
+  animation-name: shuffle-letter-1;
+  animation-delay: calc(var(--shadow-1-delay-time) + var(--delay-time) * 11);
+}
+.shadow-layer-2 .shuffle-letter:nth-of-type(13) {
+  animation-delay: calc(var(--shadow-1-delay-time) + var(--delay-time) * 12);
+}
+.shadow-layer-2 .shuffle-letter:nth-of-type(13)::before {
+  animation-name: shuffle-letter-2;
+  animation-delay: calc(var(--shadow-1-delay-time) + var(--delay-time) * 12);
+}
+.shadow-layer-2 .shuffle-letter:nth-of-type(14) {
+  animation-delay: calc(var(--shadow-1-delay-time) + var(--delay-time) * 13);
+}
+.shadow-layer-2 .shuffle-letter:nth-of-type(14)::before {
+  animation-name: shuffle-letter-2;
+  animation-delay: calc(var(--shadow-1-delay-time) + var(--delay-time) * 13);
+}
+.shadow-layer-2 .shuffle-letter:nth-of-type(15) {
+  animation-delay: calc(var(--shadow-1-delay-time) + var(--delay-time) * 14);
+}
+.shadow-layer-2 .shuffle-letter:nth-of-type(15)::before {
+  animation-name: shuffle-letter-3;
+  animation-delay: calc(var(--shadow-1-delay-time) + var(--delay-time) * 14);
+}
+.shadow-layer-2 .shuffle-letter:nth-of-type(16) {
+  animation-delay: calc(var(--shadow-1-delay-time) + var(--delay-time) * 15);
+}
+.shadow-layer-2 .shuffle-letter:nth-of-type(16)::before {
+  animation-name: shuffle-letter-2;
+  animation-delay: calc(var(--shadow-1-delay-time) + var(--delay-time) * 15);
+}
+.shadow-layer-2 .shuffle-letter:nth-of-type(17) {
+  animation-delay: calc(var(--shadow-1-delay-time) + var(--delay-time) * 16);
+}
+.shadow-layer-2 .shuffle-letter:nth-of-type(17)::before {
+  animation-name: shuffle-letter-1;
+  animation-delay: calc(var(--shadow-1-delay-time) + var(--delay-time) * 16);
+}
+.shadow-layer-2 .shuffle-letter:nth-of-type(18) {
+  animation-delay: calc(var(--shadow-1-delay-time) + var(--delay-time) * 17);
+}
+.shadow-layer-2 .shuffle-letter:nth-of-type(18)::before {
+  animation-name: shuffle-letter-1;
+  animation-delay: calc(var(--shadow-1-delay-time) + var(--delay-time) * 17);
+}
+.shadow-layer-2 .shuffle-letter:nth-of-type(19) {
+  animation-delay: calc(var(--shadow-1-delay-time) + var(--delay-time) * 18);
+}
+.shadow-layer-2 .shuffle-letter:nth-of-type(19)::before {
+  animation-name: shuffle-letter-2;
+  animation-delay: calc(var(--shadow-1-delay-time) + var(--delay-time) * 18);
+}
+.shadow-layer-2 .shuffle-letter:nth-of-type(20) {
+  animation-delay: calc(var(--shadow-1-delay-time) + var(--delay-time) * 19);
+}
+.shadow-layer-2 .shuffle-letter:nth-of-type(20)::before {
+  animation-name: shuffle-letter-2;
+  animation-delay: calc(var(--shadow-1-delay-time) + var(--delay-time) * 19);
+}
+
+.shadow-layer-3 .shuffle-letter:nth-of-type(1) {
+  animation-delay: calc(var(--shadow-1-delay-time) + var(--shadow-2-delay-time) + var(--delay-time) * 0);
+}
+.shadow-layer-3 .shuffle-letter:nth-of-type(1)::before {
+  animation-name: shuffle-letter-1;
+  animation-delay: calc(var(--shadow-1-delay-time) + var(--shadow-2-delay-time) + var(--delay-time) * 0);
+}
+.shadow-layer-3 .shuffle-letter:nth-of-type(2) {
+  animation-delay: calc(var(--shadow-1-delay-time) + var(--shadow-2-delay-time) + var(--delay-time) * 1);
+}
+.shadow-layer-3 .shuffle-letter:nth-of-type(2)::before {
+  animation-name: shuffle-letter-2;
+  animation-delay: calc(var(--shadow-1-delay-time) + var(--shadow-2-delay-time) + var(--delay-time) * 1);
+}
+.shadow-layer-3 .shuffle-letter:nth-of-type(3) {
+  animation-delay: calc(var(--shadow-1-delay-time) + var(--shadow-2-delay-time) + var(--delay-time) * 2);
+}
+.shadow-layer-3 .shuffle-letter:nth-of-type(3)::before {
+  animation-name: shuffle-letter-1;
+  animation-delay: calc(var(--shadow-1-delay-time) + var(--shadow-2-delay-time) + var(--delay-time) * 2);
+}
+.shadow-layer-3 .shuffle-letter:nth-of-type(4) {
+  animation-delay: calc(var(--shadow-1-delay-time) + var(--shadow-2-delay-time) + var(--delay-time) * 3);
+}
+.shadow-layer-3 .shuffle-letter:nth-of-type(4)::before {
+  animation-name: shuffle-letter-3;
+  animation-delay: calc(var(--shadow-1-delay-time) + var(--shadow-2-delay-time) + var(--delay-time) * 3);
+}
+.shadow-layer-3 .shuffle-letter:nth-of-type(5) {
+  animation-delay: calc(var(--shadow-1-delay-time) + var(--shadow-2-delay-time) + var(--delay-time) * 4);
+}
+.shadow-layer-3 .shuffle-letter:nth-of-type(5)::before {
+  animation-name: shuffle-letter-2;
+  animation-delay: calc(var(--shadow-1-delay-time) + var(--shadow-2-delay-time) + var(--delay-time) * 4);
+}
+.shadow-layer-3 .shuffle-letter:nth-of-type(6) {
+  animation-delay: calc(var(--shadow-1-delay-time) + var(--shadow-2-delay-time) + var(--delay-time) * 5);
+}
+.shadow-layer-3 .shuffle-letter:nth-of-type(6)::before {
+  animation-name: shuffle-letter-3;
+  animation-delay: calc(var(--shadow-1-delay-time) + var(--shadow-2-delay-time) + var(--delay-time) * 5);
+}
+.shadow-layer-3 .shuffle-letter:nth-of-type(7) {
+  animation-delay: calc(var(--shadow-1-delay-time) + var(--shadow-2-delay-time) + var(--delay-time) * 6);
+}
+.shadow-layer-3 .shuffle-letter:nth-of-type(7)::before {
+  animation-name: shuffle-letter-1;
+  animation-delay: calc(var(--shadow-1-delay-time) + var(--shadow-2-delay-time) + var(--delay-time) * 6);
+}
+.shadow-layer-3 .shuffle-letter:nth-of-type(8) {
+  animation-delay: calc(var(--shadow-1-delay-time) + var(--shadow-2-delay-time) + var(--delay-time) * 7);
+}
+.shadow-layer-3 .shuffle-letter:nth-of-type(8)::before {
+  animation-name: shuffle-letter-1;
+  animation-delay: calc(var(--shadow-1-delay-time) + var(--shadow-2-delay-time) + var(--delay-time) * 7);
+}
+.shadow-layer-3 .shuffle-letter:nth-of-type(9) {
+  animation-delay: calc(var(--shadow-1-delay-time) + var(--shadow-2-delay-time) + var(--delay-time) * 8);
+}
+.shadow-layer-3 .shuffle-letter:nth-of-type(9)::before {
+  animation-name: shuffle-letter-2;
+  animation-delay: calc(var(--shadow-1-delay-time) + var(--shadow-2-delay-time) + var(--delay-time) * 8);
+}
+.shadow-layer-3 .shuffle-letter:nth-of-type(10) {
+  animation-delay: calc(var(--shadow-1-delay-time) + var(--shadow-2-delay-time) + var(--delay-time) * 9);
+}
+.shadow-layer-3 .shuffle-letter:nth-of-type(10)::before {
+  animation-name: shuffle-letter-3;
+  animation-delay: calc(var(--shadow-1-delay-time) + var(--shadow-2-delay-time) + var(--delay-time) * 9);
+}
+.shadow-layer-3 .shuffle-letter:nth-of-type(11) {
+  animation-delay: calc(var(--shadow-1-delay-time) + var(--shadow-2-delay-time) + var(--delay-time) * 10);
+}
+.shadow-layer-3 .shuffle-letter:nth-of-type(11)::before {
+  animation-name: shuffle-letter-2;
+  animation-delay: calc(var(--shadow-1-delay-time) + var(--shadow-2-delay-time) + var(--delay-time) * 10);
+}
+.shadow-layer-3 .shuffle-letter:nth-of-type(12) {
+  animation-delay: calc(var(--shadow-1-delay-time) + var(--shadow-2-delay-time) + var(--delay-time) * 11);
+}
+.shadow-layer-3 .shuffle-letter:nth-of-type(12)::before {
+  animation-name: shuffle-letter-1;
+  animation-delay: calc(var(--shadow-1-delay-time) + var(--shadow-2-delay-time) + var(--delay-time) * 11);
+}
+.shadow-layer-3 .shuffle-letter:nth-of-type(13) {
+  animation-delay: calc(var(--shadow-1-delay-time) + var(--shadow-2-delay-time) + var(--delay-time) * 12);
+}
+.shadow-layer-3 .shuffle-letter:nth-of-type(13)::before {
+  animation-name: shuffle-letter-2;
+  animation-delay: calc(var(--shadow-1-delay-time) + var(--shadow-2-delay-time) + var(--delay-time) * 12);
+}
+.shadow-layer-3 .shuffle-letter:nth-of-type(14) {
+  animation-delay: calc(var(--shadow-1-delay-time) + var(--shadow-2-delay-time) + var(--delay-time) * 13);
+}
+.shadow-layer-3 .shuffle-letter:nth-of-type(14)::before {
+  animation-name: shuffle-letter-2;
+  animation-delay: calc(var(--shadow-1-delay-time) + var(--shadow-2-delay-time) + var(--delay-time) * 13);
+}
+.shadow-layer-3 .shuffle-letter:nth-of-type(15) {
+  animation-delay: calc(var(--shadow-1-delay-time) + var(--shadow-2-delay-time) + var(--delay-time) * 14);
+}
+.shadow-layer-3 .shuffle-letter:nth-of-type(15)::before {
+  animation-name: shuffle-letter-3;
+  animation-delay: calc(var(--shadow-1-delay-time) + var(--shadow-2-delay-time) + var(--delay-time) * 14);
+}
+.shadow-layer-3 .shuffle-letter:nth-of-type(16) {
+  animation-delay: calc(var(--shadow-1-delay-time) + var(--shadow-2-delay-time) + var(--delay-time) * 15);
+}
+.shadow-layer-3 .shuffle-letter:nth-of-type(16)::before {
+  animation-name: shuffle-letter-2;
+  animation-delay: calc(var(--shadow-1-delay-time) + var(--shadow-2-delay-time) + var(--delay-time) * 15);
+}
+.shadow-layer-3 .shuffle-letter:nth-of-type(17) {
+  animation-delay: calc(var(--shadow-1-delay-time) + var(--shadow-2-delay-time) + var(--delay-time) * 16);
+}
+.shadow-layer-3 .shuffle-letter:nth-of-type(17)::before {
+  animation-name: shuffle-letter-1;
+  animation-delay: calc(var(--shadow-1-delay-time) + var(--shadow-2-delay-time) + var(--delay-time) * 16);
+}
+.shadow-layer-3 .shuffle-letter:nth-of-type(18) {
+  animation-delay: calc(var(--shadow-1-delay-time) + var(--shadow-2-delay-time) + var(--delay-time) * 17);
+}
+.shadow-layer-3 .shuffle-letter:nth-of-type(18)::before {
+  animation-name: shuffle-letter-1;
+  animation-delay: calc(var(--shadow-1-delay-time) + var(--shadow-2-delay-time) + var(--delay-time) * 17);
+}
+.shadow-layer-3 .shuffle-letter:nth-of-type(19) {
+  animation-delay: calc(var(--shadow-1-delay-time) + var(--shadow-2-delay-time) + var(--delay-time) * 18);
+}
+.shadow-layer-3 .shuffle-letter:nth-of-type(19)::before {
+  animation-name: shuffle-letter-2;
+  animation-delay: calc(var(--shadow-1-delay-time) + var(--shadow-2-delay-time) + var(--delay-time) * 18);
+}
+.shadow-layer-3 .shuffle-letter:nth-of-type(20) {
+  animation-delay: calc(var(--shadow-1-delay-time) + var(--shadow-2-delay-time) + var(--delay-time) * 19);
+}
+.shadow-layer-3 .shuffle-letter:nth-of-type(20)::before {
+  animation-name: shuffle-letter-2;
+  animation-delay: calc(var(--shadow-1-delay-time) + var(--shadow-2-delay-time) + var(--delay-time) * 19);
+}
+

@@ -33,7 +33,6 @@ body {
 
 .shuffle-letter {
   display: inline-block;
-  font-size: 0;
   animation-name: shuffle-letter-content;
   animation-duration: var(--duration-time);
   animation-timing-function: linear;
