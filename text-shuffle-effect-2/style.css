@@ -44,7 +44,7 @@ body,
 }
 
 .shuffle-text {
-  width: calc(var(--display-font-size) * 10);
+  width: calc(var(--display-font-size) * 13);
   height: calc(var(--display-font-size) * 3);
   font-family: 'Helvetica Neue', Arial, sans-serif;
   font-weight: thin;
@@ -56,7 +56,7 @@ body,
 }
 
 .shadow-layer-1 .shuffle-text {
-  color: rgba(255, 0, 0, .0);
+  color: rgba(255, 0, 0, .1);
 }
 .shadow-layer-2 .shuffle-text {
   color: rgba(0, 255, 0, .0);

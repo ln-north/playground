@@ -1,5 +1,6 @@
 :root {
   --cursor-effect-size: 40px;
+  --cursor-effect-duration: .2s;
 }
 
 html,
@@ -11,18 +12,21 @@ body {
   background-color: #000;
   width: 100vw;
   height: 100vh;
+  color: #fff;
 }
 
 .cursor-effect-area {
   position: fixed;
   width: 100%;
   height: 100%;
+  pointer-events: none;
 }
 
 .cursor-position {
   width: 0;
   height: 0;
   position: absolute;
+  transition: all var(--cursor-effect-duration) ease;
 }
 
 .cursor-effect {
@@ -33,4 +37,24 @@ body {
   position: absolute;
   top: calc(50% - var(--cursor-effect-size) / 2);
   left: calc(50% - var(--cursor-effect-size) / 2);
+}
+
+.adjust-duration-container {
+  position: fixed;
+  top: 50%;
+  right: 40px;
+  transform: translateY(-50%);
+  display: flex;
+  flex-flow: column nowrap;
+  align-items: center;
+  writing-mode: vertical-lr;
+}
+
+.adjust-duration {
+  all: unset;
+  writing-mode: vertical-lr;
+}
+
+.adjust-duration::after {
+  content: attr(data-duration);
 }
